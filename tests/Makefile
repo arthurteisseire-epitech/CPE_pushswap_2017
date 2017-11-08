@@ -8,7 +8,8 @@
 DSRC	=	$(realpath ../src)/
 FUNC	=	$(DSRC)/functions/
 SRC     =	$(FUNC)swap.c \
-		$(FUNC)rotate.c
+		$(FUNC)rotate.c \
+		$(FUNC)tools.c
 DSRC_UT	=	$(realpath .)
 SRC_UT	=	$(DSRC_UT)/test-sort.c
 INC	=	$(realpath ../include)

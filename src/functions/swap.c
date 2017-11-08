@@ -23,3 +23,12 @@ void sc(int *a, int size_a, int *b, int size_b)
 	swap(a, size_a);
 	swap(b, size_b);
 }
+
+void put(int *a, int size_a, int *b, int size_b)
+{
+	if (size_a >= 1) {
+		if (size_b > 1)
+			shift_right(b, size_b);
+		b[0] = a[0];
+	}
+}

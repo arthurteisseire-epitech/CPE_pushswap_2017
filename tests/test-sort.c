@@ -27,6 +27,15 @@ Test(swap, sc)
 	cr_assert_arr_eq(a, b, sizeof(int) * 5);
 }
 
+Test(swap, put)
+{
+	int a[5] = {1, 2, 3, 4, 0};
+	int b[5] = {5, 1, 2, 3, 4};
+
+	put(b, 5, a, 5);
+	cr_assert_arr_eq(a, b, sizeof(int) * 5);
+}
+
 Test(rotate, r)
 {
 	int array[5] = {1, 2, 3, 4, 5};
