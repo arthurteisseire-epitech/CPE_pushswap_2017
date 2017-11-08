@@ -13,7 +13,7 @@ DSRC_UT	=	$(realpath .)
 SRC_UT	=	$(DSRC_UT)/test-sort.c
 INC	=	$(realpath ../include)
 NAME	=	units
-CFLAGS	=	-Wall -W -Wextra -I$(INC) -L../lib/my -lmy
+CFLAGS	=	-Wall -W -Wextra -I$(INC)
 LDFLAGS	=	-lcriterion -lgcov
 OBJ	=	$(SRC:.c=.o) $(SRC_UT:.c=.o)
 
@@ -31,3 +31,4 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+	make clean

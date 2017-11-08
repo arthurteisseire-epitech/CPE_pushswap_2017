@@ -8,7 +8,7 @@
 void rotate_left(int *array, int size)
 {
 	int stock = array[0];
-	int i = 1;
+	int i = 0;
 
 	while (i < size - 1) {
 		array[i] = array[i + 1];
