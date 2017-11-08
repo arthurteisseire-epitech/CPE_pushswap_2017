@@ -7,9 +7,10 @@
 
 void swap(int *array, int size)
 {
-	int stock = array[0];
+	int stock;
 
 	if (size >= 2) {
+		stock = array[0];
 		array[0] = array[1];
 		array[1] = stock;
 	}
