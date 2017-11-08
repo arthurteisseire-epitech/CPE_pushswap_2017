@@ -5,6 +5,8 @@
 ** By Arthur Teisseire
 */
 
+#include "tools.h"
+
 void swap(int *array, int size)
 {
 	int stock;

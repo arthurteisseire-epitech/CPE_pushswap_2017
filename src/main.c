@@ -20,6 +20,6 @@ int main(void)
 	int array[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 	print_tab(array, 8);
-	rotate_left(array, 8);
+	rotate_right(array, 8);
 	print_tab(array, 8);
 }

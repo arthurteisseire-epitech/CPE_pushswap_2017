@@ -10,7 +10,8 @@ FUNC	=	$(DSRC)/functions/
 		
 SRC     =	$(DSRC)main.c \
 		$(FUNC)swap.c \
-		$(FUNC)rotate.c
+		$(FUNC)rotate.c \
+		$(FUNC)tools.c
 INC	=	$(realpath include)
 NAME	=	a.out
 CFLAGS	=	-Wall -W -Wextra -I$(INC) -Llib/my -lmy
