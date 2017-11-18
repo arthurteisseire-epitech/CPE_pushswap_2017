@@ -6,9 +6,12 @@
 ##
 
 DSRC	=	$(realpath src)/
-SRC     =	$(DSRC)main.c
+SRC     =	$(DSRC)main.c \
+		$(DSRC)array_to_lk_list.c \
+		$(DSRC)my_atoi.c \
+		$(DSRC)my_strlen.c
 INC	=	$(realpath include)
-CFLAGS	=	-Wall -W -Wextra -I$(INC) -L$(DLIB) -l$(LIB) -g
+CFLAGS	=	-Wall -W -Wextra -I$(INC) -ggdb3
 OBJ	=	$(SRC:.c=.o)
 NAME	=	push_swap
 
@@ -23,7 +26,6 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	#make fclean -C tests
 	rm -f $(NAME)
 
 re: fclean all
