@@ -6,10 +6,11 @@
 ##
 
 DSRC	=	$(realpath src)/
+DTOOLS	=	$(DSRC)tools/
 SRC     =	$(DSRC)main.c \
 		$(DSRC)array_to_lk_list.c \
-		$(DSRC)my_atoi.c \
-		$(DSRC)my_strlen.c
+		$(DTOOLS)my_atoi.c \
+		$(DTOOLS)my_strlen.c
 INC	=	$(realpath include)
 CFLAGS	=	-Wall -W -Wextra -I$(INC) -ggdb3
 OBJ	=	$(SRC:.c=.o)

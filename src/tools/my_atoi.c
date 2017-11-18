@@ -14,7 +14,7 @@ int my_atoi(char *str)
 	int i = my_strlen(str) - 1;
 	int isneg = str[0] == '-' ? 1 : 0;
 
-	while (str[i] != '\0') {
+	while (i >= isneg) {
 		nb += (str[i] - '0') * power;
 		power *= 10;
 		i--;

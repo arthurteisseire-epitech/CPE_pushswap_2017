@@ -7,21 +7,28 @@
 
 #include "my.h"
 #include "struct.h"
+#include "lk_list.h"
 
 control_t *array_to_lk_list(int size, char **array)
 {
 	control_t *control = malloc(sizeof(control_t));
 	lk_list_t *curr = malloc(sizeof(lk_list_t));
+	lk_list_t *end = curr;
 
-	control->end = curr;
 	while (size > 1) {
 		size--;
-		control->tmp = malloc(sizeof(lk_list_t));
-		control->tmp->nb = my_atoi(array[size]);
-		control->tmp->next = curr;
-		curr = control->tmp;
+		curr = create_node(curr, my_atoi(array[size]));
 	}
 	control->begin = curr;
-	control->end->next = control->begin;
+	end->next = control->begin;
 	return (control);
+}
+
+lk_list_t *create_node(lk_list_t *next_node, int number)
+{
+	lk_list_t *new = malloc(sizeof(lk_list_t));
+
+	new->nb = number;
+	new->next = next_node;
+	return (new);
 }

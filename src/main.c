@@ -10,11 +10,11 @@
 
 void my_show_list(control_t *control)
 {
-	lk_list_t *current = control->begin;
+	lk_list_t *curr = control->begin;
 
-	while (current != control->end) {
-		printf("%d\n", current->nb);
-		current = current->next;
+	while (curr->next != control->begin) {
+		printf("%d\n", curr->nb);
+		curr = curr->next;
 	}
 }
 
@@ -22,12 +22,12 @@ void free_lk_list(control_t *control)
 {
 	lk_list_t *curr = control->begin;
 
-	while (curr != control->end) {
+	while (curr->next != control->begin) {
 		control->tmp = curr->next;
 		free(curr);
 		curr = control->tmp;
 	}
-	free(control->end);
+	free(control->tmp);
 	free(control);
 }
 

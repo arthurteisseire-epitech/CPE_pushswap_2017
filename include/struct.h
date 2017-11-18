@@ -17,7 +17,6 @@ typedef struct lk_list {
 
 typedef struct control {
 	lk_list_t *begin;
-	lk_list_t *end;
 	lk_list_t *tmp;
 } control_t;
 
