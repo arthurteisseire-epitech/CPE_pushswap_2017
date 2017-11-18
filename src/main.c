@@ -13,9 +13,10 @@ void my_show_list(control_t *control)
 	lk_list_t *curr = control->begin;
 
 	while (curr->next != control->begin) {
-		printf("%d\n", curr->nb);
+		printf("(%d) -> ", curr->nb);
 		curr = curr->next;
 	}
+	printf("\n");
 }
 
 void free_lk_list(control_t *control)
