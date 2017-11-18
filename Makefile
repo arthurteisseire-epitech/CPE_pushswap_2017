@@ -15,7 +15,6 @@ NAME	=	push_swap
 all: $(NAME)
 
 $(NAME):	$(OBJ)
-	make re -C $(DLIB)
 	gcc -o $(NAME) $(OBJ) $(CFLAGS)
 
 clean:
@@ -24,7 +23,7 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	make fclean -C tests
+	#make fclean -C tests
 	rm -f $(NAME)
 
 re: fclean all
