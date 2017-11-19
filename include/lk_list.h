@@ -21,4 +21,8 @@ void rra(control_t *la);
 void rrb(control_t *lb);
 void rrr(control_t *la, control_t *lb);
 
+void sa(control_t *la);
+void sb(control_t *lb);
+void sc(control_t *la, control_t *lb);
+
 #endif

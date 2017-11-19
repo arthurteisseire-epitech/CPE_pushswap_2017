@@ -20,6 +20,7 @@ void my_show_list(control_t *list)
 		curr = curr->next;
 	}
 	printf("(%d)\n", curr->nb);
+	printf("NEXT -> %d\n", curr->next->nb);
 }
 
 void my_show_rev_list(control_t *list)
@@ -31,6 +32,7 @@ void my_show_rev_list(control_t *list)
 		curr = curr->prev;
 	}
 	printf("(%d)\n", curr->nb);
+	printf("NEXT -> %d\n", curr->prev->nb);
 }
 //END
 
@@ -57,7 +59,7 @@ int main(int ac, char **av)
 	av++;
 	la = array_to_lk_list(ac, av);
 	my_show_list(la);
-	rra(la);
+	sa(la);
 	my_show_list(la);
 	printf("\n\n-------------- REV LIST ---------------\n");
 	my_show_rev_list(la);
