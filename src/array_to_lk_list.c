@@ -17,7 +17,7 @@ control_t *array_to_lk_list(int size, char **array)
 
 	size--;
 	end->nb = my_atoi(array[size]);
-	while (size > 1) {
+	while (size > 0) {
 		size--;
 		curr = create_node(curr, my_atoi(array[size]));
 	}
