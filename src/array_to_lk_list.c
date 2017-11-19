@@ -11,17 +11,20 @@
 
 control_t *array_to_lk_list(int size, char **array)
 {
-	control_t *control = malloc(sizeof(control_t));
+	control_t *list = malloc(sizeof(control_t));
 	lk_list_t *curr = malloc(sizeof(lk_list_t));
 	lk_list_t *end = curr;
 
+	size--;
+	end->nb = my_atoi(array[size]);
 	while (size > 1) {
 		size--;
 		curr = create_node(curr, my_atoi(array[size]));
 	}
-	control->begin = curr;
-	end->next = control->begin;
-	return (control);
+	list->begin = curr;
+	list->begin->prev = end;
+	end->next = list->begin;
+	return (list);
 }
 
 lk_list_t *create_node(lk_list_t *next_node, int number)
@@ -30,5 +33,6 @@ lk_list_t *create_node(lk_list_t *next_node, int number)
 
 	new->nb = number;
 	new->next = next_node;
+	next_node->prev = new;
 	return (new);
 }

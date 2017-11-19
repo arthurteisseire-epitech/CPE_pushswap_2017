@@ -13,6 +13,7 @@
 typedef struct lk_list {
 	int nb;
 	struct lk_list *next;
+	struct lk_list *prev;
 } lk_list_t;
 
 typedef struct control {
