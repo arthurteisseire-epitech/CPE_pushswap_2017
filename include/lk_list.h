@@ -17,4 +17,8 @@ void ra(control_t *la);
 void rb(control_t *lb);
 void rr(control_t *la, control_t *lb);
 
+void rra(control_t *la);
+void rrb(control_t *lb);
+void rrr(control_t *la, control_t *lb);
+
 #endif

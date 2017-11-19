@@ -57,7 +57,7 @@ int main(int ac, char **av)
 	av++;
 	la = array_to_lk_list(ac, av);
 	my_show_list(la);
-	ra(la);
+	rra(la);
 	my_show_list(la);
 	printf("\n\n-------------- REV LIST ---------------\n");
 	my_show_rev_list(la);

@@ -22,7 +22,6 @@ void rb(control_t *lb)
 
 void rr(control_t *la, control_t *lb)
 {
-	la->begin = la->begin->next;
-	lb->begin = lb->begin->next;
-	write(1, "rr ", 3);
+	ra(la);
+	rb(lb);
 }
