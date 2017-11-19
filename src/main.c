@@ -8,8 +8,6 @@
 #include <stdio.h>
 #include "lk_list.h"
 
-
-
 //DELETE TO END
 void my_show_list(control_t *list)
 {
@@ -24,7 +22,7 @@ void my_show_list(control_t *list)
 		printf("(%d)\n", curr->nb);
 		printf("NEXT -> %d\n", curr->next->nb);
 	} else
-		printf("(NULL)\n");
+		printf("\t\t(NULL)\n");
 }
 
 void my_show_rev_list(control_t *list)
@@ -40,7 +38,7 @@ void my_show_rev_list(control_t *list)
 		printf("(%d)\n", curr->nb);
 		printf("NEXT -> %d\n", curr->prev->nb);
 	} else
-		printf("(NULL)\n");
+		printf("\t\t(NULL)\n");
 }
 //END
 
@@ -69,27 +67,45 @@ int main(int ac, char **av)
 	la = array_to_lk_list(ac, av);
 	lb->begin = NULL;
 
-	printf("\nLIST A: --------------------\n");
+	printf("\nLIST A: >>>>>>>>>>>>>>>>>>>>\n");
 	my_show_list(la);
-	printf("FIN LIST A --------------------\n");
-	printf("\nLIST B: --------------------\n");
+	printf("FIN LIST A <<<<<<<<<<<<<<<<<<<<\n");
+	printf("\nLIST B: >>>>>>>>>>>>>>>>>>>>\n");
 	my_show_list(lb);
-	printf("FIN LIST B --------------------\n");
+	printf("FIN LIST B <<<<<<<<<<<<<<<<<<<<\n");
+
 	pb(la, lb);
 	pb(la, lb);
-	printf("\nLIST A: --------------------\n");
+	sa(la);
+	ra(la);
+/*
+	pb(la, lb);
+	pb(la, lb);
+	rrr(la, lb);
+	rr(la, lb);
+	sc(la, lb);
+
+	pb(la, lb);
+	pb(la, lb);
+	sa(la);
+	ra(la);
+	ra(la);
+	sa(la);
+*/
+
+	printf("\nLIST A: >>>>>>>>>>>>>>>>>>>>\n");
 	my_show_list(la);
-	printf("FIN LIST A --------------------\n");
-	printf("\nLIST B: --------------------\n");
+	printf("FIN LIST A <<<<<<<<<<<<<<<<<<<<\n");
+	printf("\nLIST B: >>>>>>>>>>>>>>>>>>>>\n");
 	my_show_list(lb);
-	printf("FIN LIST B --------------------\n");
+	printf("FIN LIST B <<<<<<<<<<<<<<<<<<<<\n");
 	printf("\n\n-------------- REV LIST ---------------\n");
-	printf("\nLIST A: --------------------\n");
+	printf("\nLIST A: >>>>>>>>>>>>>>>>>>>>\n");
 	my_show_rev_list(la);
-	printf("FIN LIST A --------------------\n");
-	printf("\nLIST B: --------------------\n");
+	printf("FIN LIST A <<<<<<<<<<<<<<<<<<<<\n");
+	printf("\nLIST B: >>>>>>>>>>>>>>>>>>>>\n");
 	my_show_rev_list(lb);
-	printf("FIN LIST B --------------------\n");
-	free_lk_list(la);
-	free_lk_list(lb);
+	printf("FIN LIST B <<<<<<<<<<<<<<<<<<<<\n");
+	//free_lk_list(la);
+	//free_lk_list(lb);
 }

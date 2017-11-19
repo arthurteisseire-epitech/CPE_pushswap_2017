@@ -13,7 +13,10 @@ static void archive_first_node(control_t *list)
 	list->begin->next->prev = list->begin->prev;
 	list->begin->prev->next = list->begin->next;
 	list->tmp = list->begin;
-	list->begin = list->begin->next;
+	if (list->begin != list->begin->next)
+		list->begin = list->begin->next;
+	else
+		list->begin = NULL;
 }
 
 static void archive_node_to_list(control_t *l_src, control_t *l_dest)
@@ -27,12 +30,13 @@ static void archive_node_to_list(control_t *l_src, control_t *l_dest)
 		l_src->tmp->prev = l_dest->begin->prev;
 		l_dest->begin->prev->next = l_src->tmp;
 		l_dest->begin->prev = l_src->tmp;
+		l_dest->begin = l_src->tmp;
 	}
 }
 
 void pa(control_t *lb, control_t *la)
 {
-	if (lb->begin != lb->begin->next) {
+	if (lb->begin != NULL) {
 		archive_first_node(lb);
 		archive_node_to_list(lb, la);
 		write(1, "pa ", 3);
@@ -41,7 +45,7 @@ void pa(control_t *lb, control_t *la)
 
 void pb(control_t *la, control_t *lb)
 {
-	if (la->begin != la->begin->next) {
+	if (la->begin != NULL) {
 		archive_first_node(la);
 		archive_node_to_list(la, lb);
 		write(1, "pb ", 3);

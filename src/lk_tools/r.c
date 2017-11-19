@@ -10,14 +10,18 @@
 
 void ra(control_t *la)
 {
-	la->begin = la->begin->next;
-	write(1, "ra ", 3);
+	if (la->begin != NULL) {
+		la->begin = la->begin->next;
+		write(1, "ra ", 3);
+	}
 }
 
 void rb(control_t *lb)
 {
-	lb->begin = lb->begin->next;
-	write(1, "rb ", 3);
+	if (lb->begin != NULL) {
+		lb->begin = lb->begin->next;
+		write(1, "rb ", 3);
+	}
 }
 
 void rr(control_t *la, control_t *lb)

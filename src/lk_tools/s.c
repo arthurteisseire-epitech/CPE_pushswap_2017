@@ -18,7 +18,7 @@ static void set_prev(control_t *la)
 
 void sa(control_t *la)
 {
-	if (la->begin != la->begin->next) {
+	if (la->begin != NULL && la->begin != la->begin->next) {
 		la->tmp = la->begin;
 		la->begin = la->begin->next;
 		la->tmp->next = la->begin->next;
@@ -30,7 +30,7 @@ void sa(control_t *la)
 
 void sb(control_t *lb)
 {
-	if (lb->begin != lb->begin->next) {
+	if (lb->begin != NULL && lb->begin != lb->begin->next) {
 		lb->tmp = lb->begin;
 		lb->begin = lb->begin->next;
 		lb->tmp->next = lb->begin->next;

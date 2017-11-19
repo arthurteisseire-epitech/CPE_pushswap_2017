@@ -1,3 +1,4 @@
+CC	=	gcc
 INC	=	my.h
 SRC	=	my_atoi.c \
 		my_strlen.c

@@ -5,6 +5,7 @@
 ## Arthur Teisseire
 ##
 
+CC	=	gcc
 DSRC	=	$(realpath src)/
 DLIB	=	$(realpath lib/my)
 INC	=	$(realpath include)
@@ -25,7 +26,7 @@ all: $(NAME)
 
 $(NAME):	$(OBJ)
 	make -C $(DLIB)
-	gcc -o $(NAME) $(OBJ) $(CFLAGS) $(LIBS)
+	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(LIBS)
 
 clean:
 	rm -f *.gcno
@@ -37,4 +38,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-	make clean
