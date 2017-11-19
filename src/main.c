@@ -76,9 +76,9 @@ int main(int ac, char **av)
 
 	pb(la, lb);
 	pb(la, lb);
+	pb(la, lb);
+	pb(la, lb);
 	sa(la);
-	ra(la);
-/*
 	pb(la, lb);
 	pb(la, lb);
 	rrr(la, lb);
@@ -87,11 +87,10 @@ int main(int ac, char **av)
 
 	pb(la, lb);
 	pb(la, lb);
-	sa(la);
-	ra(la);
-	ra(la);
-	sa(la);
-*/
+	sc(la, lb);
+	rr(la, lb);
+	rr(la, lb);
+	sc(la, lb);
 
 	printf("\nLIST A: >>>>>>>>>>>>>>>>>>>>\n");
 	my_show_list(la);

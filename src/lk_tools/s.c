@@ -8,36 +8,38 @@
 #include "my.h"
 #include "struct.h"
 
-static void set_prev(control_t *la)
+static void set_prev(control_t *list)
 {
-	la->begin->prev = la->tmp->prev;
-	la->begin->prev->next = la->begin;
-	la->begin->next->prev = la->begin;
-	la->tmp->next->prev = la->tmp;
+	list->begin->prev = list->tmp->prev;
+	list->begin->prev->next = list->begin;
+	list->begin->next->prev = list->begin;
+	list->tmp->next->prev = list->tmp;
+}
+
+static void swap(control_t *list, char *to_print)
+{
+	if (list->begin->next->next == list->begin)
+		list->begin = list->begin->next;
+	else {
+		list->tmp = list->begin;
+		list->begin = list->begin->next;
+		list->tmp->next = list->begin->next;
+		list->begin->next = list->tmp;
+		set_prev(list);
+		write(1, to_print, 3);
+	}
 }
 
 void sa(control_t *la)
 {
-	if (la->begin != NULL && la->begin != la->begin->next) {
-		la->tmp = la->begin;
-		la->begin = la->begin->next;
-		la->tmp->next = la->begin->next;
-		la->begin->next = la->tmp;
-		set_prev(la);
-		write(1, "sa ", 3);
-	}
+	if (la->begin != NULL && la->begin != la->begin->next)
+		swap(la, "sa ");
 }
 
 void sb(control_t *lb)
 {
-	if (lb->begin != NULL && lb->begin != lb->begin->next) {
-		lb->tmp = lb->begin;
-		lb->begin = lb->begin->next;
-		lb->tmp->next = lb->begin->next;
-		lb->begin->next = lb->tmp;
-		set_prev(lb);
-		write(1, "sb ", 3);
-	}
+	if (lb->begin != NULL && lb->begin != lb->begin->next)
+		swap(lb, "sb ");
 }
 
 void sc(control_t *la, control_t *lb)
