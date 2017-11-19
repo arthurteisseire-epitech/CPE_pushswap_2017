@@ -12,6 +12,7 @@
 
 control_t *array_to_lk_list(int size, char **array);
 lk_list_t *create_node(lk_list_t *next_node, int number);
+void free_lk_list(control_t *list);
 
 void ra(control_t *la);
 void rb(control_t *lb);

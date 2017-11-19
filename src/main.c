@@ -42,19 +42,6 @@ void my_show_rev_list(control_t *list)
 }
 //END
 
-void free_lk_list(control_t *list)
-{
-	lk_list_t *curr = list->begin;
-
-	while (curr->next != list->begin) {
-		list->tmp = curr->next;
-		free(curr);
-		curr = list->tmp;
-	}
-	free(list->tmp);
-	free(list);
-}
-
 int main(int ac, char **av)
 {
 	control_t *la;
@@ -105,6 +92,6 @@ int main(int ac, char **av)
 	printf("\nLIST B: >>>>>>>>>>>>>>>>>>>>\n");
 	my_show_rev_list(lb);
 	printf("FIN LIST B <<<<<<<<<<<<<<<<<<<<\n");
-	//free_lk_list(la);
-	//free_lk_list(lb);
+	free_lk_list(la);
+	free_lk_list(lb);
 }
