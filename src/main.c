@@ -8,6 +8,9 @@
 #include <stdio.h>
 #include "lk_list.h"
 
+
+
+//DELETE TO END
 void my_show_list(control_t *list)
 {
 	lk_list_t *curr = list->begin;
@@ -29,6 +32,7 @@ void my_show_rev_list(control_t *list)
 	}
 	printf("(%d)\n", curr->nb);
 }
+//END
 
 void free_lk_list(control_t *list)
 {
@@ -45,14 +49,17 @@ void free_lk_list(control_t *list)
 
 int main(int ac, char **av)
 {
-	control_t *list;
+	control_t *la;
 
 	if (ac < 2)
 		return (84);
 	ac--;
 	av++;
-	list = array_to_lk_list(ac, av);
-	my_show_list(list);
-	my_show_rev_list(list);
-	free_lk_list(list);
+	la = array_to_lk_list(ac, av);
+	my_show_list(la);
+	ra(la);
+	my_show_list(la);
+	printf("\n\n-------------- REV LIST ---------------\n");
+	my_show_rev_list(la);
+	free_lk_list(la);
 }
