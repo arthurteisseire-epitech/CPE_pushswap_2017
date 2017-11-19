@@ -25,4 +25,7 @@ void sa(control_t *la);
 void sb(control_t *lb);
 void sc(control_t *la, control_t *lb);
 
+void pa(control_t *lb, control_t *la);
+void pb(control_t *la, control_t *lb);
+
 #endif

@@ -14,7 +14,8 @@ SRC     =	$(DSRC)main.c \
 		$(DSRC)array_to_lk_list.c \
 		$(DTOOLS)r.c \
 		$(DTOOLS)rr.c \
-		$(DTOOLS)s.c
+		$(DTOOLS)s.c \
+		$(DTOOLS)p.c
 CFLAGS	=	-Wall -W -Wextra -I$(INC) -L$(DLIB) -l$(LIB) -ggdb3
 OBJ	=	$(SRC:.c=.o)
 NAME	=	push_swap
