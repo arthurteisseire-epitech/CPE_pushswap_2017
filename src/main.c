@@ -54,6 +54,20 @@ int main(int ac, char **av)
 	la = array_to_lk_list(ac, av);
 	lb->begin = NULL;
 
+	/*
+	my_show_list(la);
+	printf("\n");
+	printf("\n");
+	my_show_list(la);
+	printf("\n");
+	*/
+
+	sort(la, lb, ac);
+
+	free_lk_list(la);
+	free_lk_list(lb);
+
+	/*
 	printf("\nLIST A: >>>>>>>>>>>>>>>>>>>>\n");
 	my_show_list(la);
 	printf("FIN LIST A <<<<<<<<<<<<<<<<<<<<\n");
@@ -61,6 +75,7 @@ int main(int ac, char **av)
 	my_show_list(lb);
 	printf("FIN LIST B <<<<<<<<<<<<<<<<<<<<\n");
 
+	printf("\n\n");
 	pb(la, lb);
 	pb(la, lb);
 	pb(la, lb);
@@ -78,6 +93,7 @@ int main(int ac, char **av)
 	rr(la, lb);
 	rr(la, lb);
 	sc(la, lb);
+	printf("\n\n");
 
 	printf("\nLIST A: >>>>>>>>>>>>>>>>>>>>\n");
 	my_show_list(la);
@@ -92,6 +108,5 @@ int main(int ac, char **av)
 	printf("\nLIST B: >>>>>>>>>>>>>>>>>>>>\n");
 	my_show_rev_list(lb);
 	printf("FIN LIST B <<<<<<<<<<<<<<<<<<<<\n");
-	free_lk_list(la);
-	free_lk_list(lb);
+	*/
 }

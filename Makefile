@@ -15,6 +15,7 @@ DTOOLS	=	$(DSRC)lk_tools/
 SRC     =	$(DSRC)main.c \
 		$(DSRC)array_to_lk_list.c  \
 		$(DSRC)free_lk_list.c  \
+		$(DSRC)sort.c  \
 		$(DTOOLS)r.c \
 		$(DTOOLS)rr.c \
 		$(DTOOLS)s.c \
