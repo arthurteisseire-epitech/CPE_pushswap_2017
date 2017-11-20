@@ -5,17 +5,15 @@
 ## Arthur Teisseire
 ##
 
-CC	=	gcc
+CC	=	clang
 DSRC	=	$(realpath src)/
-DLIB	=	$(realpath lib/my)
 INC	=	$(realpath include)
-LIB	=	my
-LIBS	=	-L$(DLIB) -l$(LIB)
 DTOOLS	=	$(DSRC)lk_tools/
 SRC     =	$(DSRC)main.c \
 		$(DSRC)array_to_lk_list.c  \
 		$(DSRC)free_lk_list.c  \
 		$(DSRC)sort.c  \
+		$(DSRC)my_atoi.c  \
 		$(DTOOLS)r.c \
 		$(DTOOLS)rr.c \
 		$(DTOOLS)s.c \
@@ -27,8 +25,7 @@ NAME	=	push_swap
 all: $(NAME)
 
 $(NAME):	$(OBJ)
-	make -C $(DLIB)
-	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(LIBS)
+	$(CC) -o $(NAME) $(OBJ) $(CFLAGS)
 
 clean:
 	rm -f *.gcno
@@ -36,7 +33,6 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	make fclean -C $(DLIB)
 	rm -f $(NAME)
 
 re: fclean all

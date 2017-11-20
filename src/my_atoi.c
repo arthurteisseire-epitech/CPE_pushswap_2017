@@ -10,16 +10,15 @@
 int my_atoi(char *str)
 {
 	int nb = 0;
-	int power = 1;
-	int i = my_strlen(str) - 1;
 	int isneg = str[0] == '-' ? 1 : 0;
+	int i = isneg;
 
-	while (i >= isneg) {
-		nb += (str[i] - '0') * power;
-		power *= 10;
-		i--;
+	while (str[i] != '\0') {
+		nb *= 10;
+		nb += (str[i] - '0');
+		i++;
 	}
 	if (isneg)
-		nb = -nb;
+		return (-nb);
 	return (nb);
 }
