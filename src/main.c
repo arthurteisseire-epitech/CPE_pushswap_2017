@@ -58,11 +58,14 @@ int main(int ac, char **av)
 	my_show_list(la);
 	printf("\n");
 	printf("\n");
-	my_show_list(la);
 	printf("\n");
 	*/
 
+	my_show_list(la);
 	sort(la, lb, ac);
+	printf("\n");
+	my_show_list(la);
+	printf("\n");
 
 	free_lk_list(la);
 	free_lk_list(lb);
