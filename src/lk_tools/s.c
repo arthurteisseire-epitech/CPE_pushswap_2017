@@ -8,24 +8,14 @@
 #include "my.h"
 #include "struct.h"
 
-static void set_prev(control_t *list)
-{
-	list->begin->prev = list->tmp->prev;
-	list->begin->prev->next = list->begin;
-	list->begin->next->prev = list->begin;
-	list->tmp->next->prev = list->tmp;
-}
-
 static void swap(control_t *list, char *to_print)
 {
-	if (list->begin->next->next == list->begin)
-		list->begin = list->begin->next;
-	else {
-		list->tmp = list->begin;
-		list->begin = list->begin->next;
-		list->tmp->next = list->begin->next;
-		list->begin->next = list->tmp;
-		set_prev(list);
+	int stock;
+
+	if (list->begin->next->next != list->begin) {
+		stock = list->begin->nb;
+		list->begin->nb = list->begin->next->nb;
+		list->begin->next->nb = stock;
 		write(1, to_print, 3);
 	}
 }
