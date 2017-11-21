@@ -6,6 +6,7 @@
 */
 
 #include <stdio.h>
+#include "my.h"
 #include "lk_list.h"
 
 //DELETE TO END
@@ -55,9 +56,14 @@ int main(int ac, char **av)
 	lb->begin = NULL;
 
 	//my_show_list(la);
+	if (is_sorted(la)) {
+		write(1, "\n", 1);
+		return (0);
+	}
 	sort(la, lb, ac);
 	//my_show_list(lb);
 	//printf("\n");
 	free_lk_list(la);
 	free_lk_list(lb);
+	return (0);
 }
