@@ -45,9 +45,16 @@ void pa(control_t *lb, control_t *la)
 
 void pb(control_t *la, control_t *lb)
 {
+	int is_last = 0;
+
 	if (la->begin != NULL) {
+		if (la->begin == la->begin->next)
+			is_last = 1;
 		archive_first_node(la);
 		archive_node_to_list(la, lb);
-		write(1, "pb ", 3);
+		if (!is_last)
+			write(1, "pb ", 3);
+		else
+			write(1, "pb\n", 3);
 	}
 }
