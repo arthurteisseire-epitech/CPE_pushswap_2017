@@ -5,7 +5,7 @@
 ## Arthur Teisseire
 ##
 
-CC	=	clang
+CC	=	gcc
 DSRC	=	$(realpath src)/
 INC	=	$(realpath include)
 DTOOLS	=	$(DSRC)lk_tools/
