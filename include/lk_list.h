@@ -11,6 +11,8 @@
 #include "my_alloc.h"
 #include "struct.h"
 
+#define malloc my_alloc
+
 control_t *array_to_lk_list(int size, char **array);
 lk_list_t *create_node(lk_list_t *next_node, int number);
 void free_lk_list(control_t *list);

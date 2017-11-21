@@ -10,8 +10,6 @@
 
 #include <stdlib.h>
 
-#define malloc my_alloc
-
 void *my_alloc(size_t size);
 
 #endif
