@@ -64,7 +64,7 @@ int main(int ac, char **av)
 	my_show_list(la);
 	sort(la, lb, ac);
 	printf("\n");
-	my_show_list(la);
+	my_show_list(lb);
 	printf("\n");
 
 	free_lk_list(la);

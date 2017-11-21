@@ -30,5 +30,7 @@ void pa(control_t *lb, control_t *la);
 void pb(control_t *la, control_t *lb);
 
 void sort(control_t *la, control_t *lb, int len);
+void move_node_to_first(control_t *la, int index, void (*move)(control_t *));
+int find_bigger_nb(control_t *la);
 
 #endif
