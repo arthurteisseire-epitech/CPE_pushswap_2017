@@ -7,6 +7,18 @@
 
 #include "lk_list.h"
 
+void sort(control_t *la, control_t *lb, int len)
+{
+	int bigger_index;
+
+	while (la->begin != NULL) {
+		bigger_index = find_bigger_nb(la);
+		move_node_to_first(la, bigger_index, len);
+		pb(la, lb);
+		len--;
+	}
+}
+
 int find_bigger_nb(control_t *la)
 {
 	lk_list_t *curr = la->begin->next;
@@ -37,18 +49,6 @@ void move_node_to_first(control_t *la, int index, int len)
 			rra(la);
 			index++;
 		}
-	}
-}
-
-void sort(control_t *la, control_t *lb, int len)
-{
-	int bigger_index;
-
-	while (la->begin != NULL) {
-		bigger_index = find_bigger_nb(la);
-		move_node_to_first(la, bigger_index, len);
-		pb(la, lb);
-		len--;
 	}
 }
 /*
