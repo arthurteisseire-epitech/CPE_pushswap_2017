@@ -10,42 +10,45 @@
 int find_bigger_nb(control_t *la)
 {
 	lk_list_t *curr = la->begin->next;
-	int i = 0;
 	int max = la->begin->nb;
-	int bigger_index = 0;
+	int bigger_index = 1;
+	int curr_index = 2;
 
 	while (curr != la->begin) {
 		if (curr->nb > max) {
 			max = curr->nb;
-			bigger_index = i;
+			bigger_index = curr_index;
 		}
-		i++;
+		curr_index++;
 		curr = curr->next;
 	}
 	return (bigger_index);
 }
 
-void move_node_to_first(control_t *la, int index, void (*move)(control_t *))
+void move_node_to_first(control_t *la, int index, int len)
 {
-	while (index != 0) {
-		move(la);
-		index--;
+	if (index <= len / 2) {
+		while (index != 1) {
+			ra(la);
+			index--;
+		}
+	} else {
+		while (index < len + 1) {
+			rra(la);
+			index++;
+		}
 	}
 }
 
 void sort(control_t *la, control_t *lb, int len)
 {
-	int pillar = (len - 1) / 2;
 	int bigger_index;
-	void (*move)(control_t *);
 
 	while (la->begin != NULL) {
 		bigger_index = find_bigger_nb(la);
-		move = bigger_index <= pillar ? ra : rra;
-		move_node_to_first(la, bigger_index, move);
+		move_node_to_first(la, bigger_index, len);
 		pb(la, lb);
 		len--;
-		pillar = (len - 1) / 2;
 	}
 }
 /*
