@@ -14,6 +14,7 @@ SRC     =	$(DSRC)main.c \
 		$(DSRC)free_lk_list.c  \
 		$(DSRC)sort.c  \
 		$(DSRC)my_atoi.c  \
+		$(DSRC)my_alloc.c  \
 		$(DTOOLS)r.c \
 		$(DTOOLS)rr.c \
 		$(DTOOLS)s.c \

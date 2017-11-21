@@ -10,7 +10,6 @@
 
 #include <unistd.h>
 
-int my_strlen(char *str);
 int my_atoi(char *str);
 
 #endif

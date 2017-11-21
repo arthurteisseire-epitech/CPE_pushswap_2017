@@ -8,6 +8,7 @@
 #ifndef LK_LIST_H
 #define LK_LIST_H
 
+#include "my_alloc.h"
 #include "struct.h"
 
 control_t *array_to_lk_list(int size, char **array);
