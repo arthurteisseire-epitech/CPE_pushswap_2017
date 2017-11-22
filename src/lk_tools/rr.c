@@ -10,10 +10,8 @@
 
 void rra(control_t *la)
 {
-	if (la->begin != NULL) {
+	if (la->begin != NULL)
 		la->begin = la->begin->prev;
-		write(1, "rra ", 4);
-	}
 }
 
 void rrb(control_t *lb)

@@ -5,6 +5,7 @@
 ** By Arthur Teisseire
 */
 
+#include "my.h"
 #include "lk_list.h"
 
 void sort(control_t *la, control_t *lb, int len)
@@ -37,40 +38,35 @@ int find_bigger_nb(control_t *la)
 	return (bigger_index);
 }
 
+static void fill(char *buffer, char *str, int *it)
+{
+	while (*str != '\0') {
+		buffer[*it] = *str;
+		(*it)++;
+		str++;
+	}
+}
+
 void move_node_to_first(control_t *la, int index, int len)
 {
+	char *buffer;
+	int it = 0;
+
 	if (index <= len / 2) {
+		buffer = malloc(sizeof(char) * (index + 1) * 3);
 		while (index != 1) {
 			ra(la);
+			fill(buffer, "ra ", &it);
 			index--;
 		}
 	} else {
+		buffer = malloc(sizeof(char) * (len - index + 1) * 4);
 		while (index < len + 1) {
 			rra(la);
+			fill(buffer, "rra ", &it);
 			index++;
 		}
 	}
+	write(1, buffer, it);
+	free(buffer);
 }
-/*
-static void sort_bubble(control_t *la, control_t *lb, int len)
-{
-	int it_1 = 0;
-	int sorted_element_nb = 1;
-	int not_sorted = 1;
-
-	while (not_sorted == 1) {
-		not_sorted = 0;
-		while (it_1 < len - sorted_element_nb) {
-			if (la->begin->nb > la->begin->next->nb) {
-				sa(la);
-				not_sorted = 1;
-			}
-			ra(la);
-			it_1++;
-		}
-		it_1 = 0;
-		for (int it_2 = 0; it_2 < sorted_element_nb; it_2++)
-			ra(la);
-	}
-}
-*/

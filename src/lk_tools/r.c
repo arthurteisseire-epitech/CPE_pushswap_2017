@@ -10,10 +10,8 @@
 
 void ra(control_t *la)
 {
-	if (la->begin != NULL) {
+	if (la->begin != NULL)
 		la->begin = la->begin->next;
-		write(1, "ra ", 3);
-	}
 }
 
 void rb(control_t *lb)
