@@ -16,10 +16,8 @@ void ra(control_t *la)
 
 void rb(control_t *lb)
 {
-	if (lb->begin != NULL) {
+	if (lb->begin != NULL)
 		lb->begin = lb->begin->next;
-		write(1, "rb ", 3);
-	}
 }
 
 void rr(control_t *la, control_t *lb)

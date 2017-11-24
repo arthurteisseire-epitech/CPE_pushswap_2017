@@ -37,9 +37,12 @@ static void archive_node_to_list(control_t *l_src, control_t *l_dest)
 void pa(control_t *lb, control_t *la)
 {
 	if (lb->begin != NULL) {
+		if (la->begin != la->begin->next)
+			write(1, "pa ", 3);
+		else
+			write(1, "pa\n", 3);
 		archive_first_node(lb);
 		archive_node_to_list(lb, la);
-		write(1, "pa ", 3);
 	}
 }
 
