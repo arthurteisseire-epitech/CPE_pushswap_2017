@@ -13,23 +13,25 @@ void sort(control_t *la, control_t *lb, int len)
 	int bigger_index;
 
 	while (la->begin != NULL) {
-		bigger_index = find_bigger_nb(la);
+		bigger_index = find_lower_nb(la);
 		move_node_to_first(la, bigger_index, len);
 		pb(la, lb);
 		len--;
 	}
+	while (lb->begin != NULL)
+		pa(lb, la);
 }
 
-int find_bigger_nb(control_t *la)
+int find_lower_nb(control_t *la)
 {
 	lk_list_t *curr = la->begin->next;
-	int max = la->begin->nb;
+	int min = la->begin->nb;
 	int bigger_index = 1;
 	int curr_index = 2;
 
 	while (curr != la->begin) {
-		if (curr->nb > max) {
-			max = curr->nb;
+		if (curr->nb < min) {
+			min = curr->nb;
 			bigger_index = curr_index;
 		}
 		curr_index++;
