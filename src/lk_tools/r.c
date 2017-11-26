@@ -10,13 +10,13 @@
 
 void ra(control_t *la)
 {
-	if (la->begin != NULL)
+	if (la->begin != NULL && la->begin != la->begin->next)
 		la->begin = la->begin->next;
 }
 
 void rb(control_t *lb)
 {
-	if (lb->begin != NULL)
+	if (lb->begin != NULL && lb->begin != lb->begin->next)
 		lb->begin = lb->begin->next;
 }
 

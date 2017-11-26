@@ -38,13 +38,14 @@ int find_bigger_nb(control_t *la)
 	return (bigger_index);
 }
 
-static void fill(char *buffer, char *str, int *it)
+static void fill(control_t *la, char *buffer, char *str, int *it)
 {
-	while (*str != '\0') {
-		buffer[*it] = *str;
-		(*it)++;
-		str++;
-	}
+	if (la->begin != la->begin->next)
+		while (*str != '\0') {
+			buffer[*it] = *str;
+			(*it)++;
+			str++;
+		}
 }
 
 void move_node_to_first(control_t *la, int index, int len)
@@ -56,14 +57,14 @@ void move_node_to_first(control_t *la, int index, int len)
 		buffer = malloc(sizeof(char) * (index + 1) * 3);
 		while (index != 1) {
 			ra(la);
-			fill(buffer, "ra ", &it);
+			fill(la, buffer, "ra ", &it);
 			index--;
 		}
 	} else {
 		buffer = malloc(sizeof(char) * (len - index + 1) * 4);
-		while (index < len + 1) {
+		while (index <= len) {
 			rra(la);
-			fill(buffer, "rra ", &it);
+			fill(la, buffer, "rra ", &it);
 			index++;
 		}
 	}
